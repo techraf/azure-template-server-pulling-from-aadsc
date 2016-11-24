@@ -1,0 +1,66 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Generation": {
+      "value": "{{ generation_number }}"
+    },
+    "StorageAccountName": {
+      "value": "{{ server_storage_account }}"
+    },
+    "VirtualNetworkName": {
+      "value": "{{ vm_network_name }}"
+    },
+    "vmName": {
+      "value": "{{ server_name }}"
+    },
+    "vmSize": {
+      "value": "{{ vm_size }}"
+    },
+    "imageSKU": {
+      "value": "{{ image_sku }}"
+    },
+    "adminUsername": {
+      "value": "{{ admin_username }}"
+    },
+    "adminPassword": {
+      "value": "{{ admin_password }}"
+    },
+    "modulesUrl": {
+      "value": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip"
+    },
+    "configurationFunction": {
+      "value": "UpdateLCMforAAPull.ps1\\ConfigureLCMforAAPull"
+    },
+    "registrationKey": {
+      "value": ""{{ azure_automation_registration_key }}"
+    },
+    "registrationUrl": {
+      "value": "{{ azure_automation_registration_url }}"
+    },
+    "nodeConfigurationName": {
+      "value": "{{ node_configuration_name }}"
+    },
+    "configurationMode": {
+      "value": "ApplyAndMonitor"
+    },
+    "configurationModeFrequencyMins": {
+      "value": 15
+    },
+    "refreshFrequencyMins": {
+      "value": 30
+    },
+    "rebootNodeIfNeeded": {
+      "value": true
+    },
+    "actionAfterReboot": {
+      "value": "ContinueConfiguration"
+    },
+    "allowModuleOverwrite": {
+      "value": false
+    },
+    "timestamp": {
+      "value": "{{ timestamp }}"
+    }
+  }
+}
