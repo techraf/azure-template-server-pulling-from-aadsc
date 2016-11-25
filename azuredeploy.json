@@ -172,7 +172,6 @@
     "nicName": "[parameters('vmName')]",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
-    "vmExtensionName": "dscExtension"
   },
   "resources": [
     {
