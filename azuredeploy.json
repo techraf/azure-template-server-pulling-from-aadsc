@@ -28,32 +28,32 @@
         "description": "Virtual Network Name"
       }
     },
-    "vmName": {
+    "VmName": {
       "type": "string",
       "metadata": {
         "description": "Name of the VM"
       }
     },
-    "vmSize": {
+    "VmSize": {
       "type": "string",
       "defaultValue": "Standard_A2",
       "metadata": {
         "description": "Size of the VM"
       }
     },
-    "ImagePublisher": {
+    "VmImagePublisher": {
       "type": "string",
       "metadata": {
         "description": "Publisher of the VM image"
       }
     },
-    "ImageOffer": {
+    "VmImageOffer": {
       "type": "string",
       "metadata": {
         "description": "Offer of the VM image"
       }
     },
-    "ImageSKU": {
+    "VmImageSKU": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
       "allowedValues": [
@@ -68,13 +68,13 @@
         "description": "Image SKU"
       }
     },
-    "adminUsername": {
+    "VmAdminUsername": {
       "type": "string",
       "metadata": {
         "description": "Admin username"
       }
     },
-    "adminPassword": {
+    "VmAdminPassword": {
       "type": "securestring",
       "metadata": {
         "description": "Admin password"
@@ -193,9 +193,9 @@
     "subnet1Prefix": "10.0.0.0/24",
     "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', variables('subnet1Name'))]",
     "publicIPAddressType": "Dynamic",
-    "publicIPAddressName": "[parameters('vmName')]",
-    "serverDomainName": "[concat(parameters('vmName'), 'gen', parameters('Generation'))]",
-    "nicName": "[parameters('vmName')]",
+    "publicIPAddressName": "[parameters('VmName')]",
+    "serverDomainName": "[concat(parameters('VmName'), 'gen', parameters('Generation'))]",
+    "nicName": "[parameters('VmName')]",
     "imagePublisher": "[parameters('ImagePublisher')]",
     "imageOffer": "[parameters('ImageOffer')]"
   },
@@ -271,7 +271,7 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmName')]",
+      "name": "[parameters('VmName')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
@@ -279,10 +279,10 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "[parameters('vmSize')]"
+          "vmSize": "[parameters('VmSize')]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmName')]",
+          "computerName": "[parameters('VmName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
@@ -313,11 +313,11 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('vmName'),'/MyCustomScriptExtension')]",
+      "name": "[concat(parameters('VmName'),'/MyCustomScriptExtension')]",
       "apiVersion": "2015-05-01-preview",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
+        "[concat('Microsoft.Compute/virtualMachines/',parameters('VmName'))]"
       ],
       "properties": {
         "publisher": "Microsoft.Compute",
@@ -331,12 +331,12 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('vmName'),'/Microsoft.Powershell.DSC')]",
+      "name": "[concat(parameters('VmName'),'/Microsoft.Powershell.DSC')]",
       "apiVersion": "2015-06-15",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]",
-        "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('vmName'), 'MyCustomScriptExtension')]"
+        "[resourceId('Microsoft.Compute/virtualMachines', parameters('VmName'))]",
+        "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('VmName'), 'MyCustomScriptExtension')]"
       ],
       "properties": {
         "publisher": "Microsoft.Powershell",
