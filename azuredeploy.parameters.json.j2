@@ -32,6 +32,12 @@
     "adminPassword": {
       "value": "{{ admin_password }}"
     },
+    "fileUris": {
+      "value": "https://raw.githubusercontent.com/techraf/azure-template-server-pulling-from-aadsc/master/CustomScript.ps1"
+    },
+    "commandToExecute": {
+      "value": "powershell.exe -ExecutionPolicy Unrestricted -File CustomScript.ps1"
+    }
     "modulesUrl": {
       "value": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip"
     },

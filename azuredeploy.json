@@ -80,6 +80,19 @@
         "description": "Admin password"
       }
     },
+    "fileUris": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "The uri list of files. Split by a space."
+      }
+    },
+    "commandToExecute": {
+      "type": "string",
+      "metadata": {
+        "description": "The command to execute."
+      }
+    },
     "modulesUrl": {
       "type": "string",
       "defaultValue": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip",
@@ -311,10 +324,8 @@
         "type": "CustomScriptExtension",
         "typeHandlerVersion": "1.7",
         "settings": {
-          "fileUris": [
-            "https://raw.githubusercontent.com/techraf/azure-template-server-pulling-from-aadsc/master/CustomScript.ps1"
-          ],
-          "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File CustomScript.ps1"
+          "fileUris": "[split(parameters('fileUris'), ' ')]",
+          "commandToExecute": "[parameters('commandToExecute')]"
         }
       }
     },
