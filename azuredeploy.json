@@ -196,7 +196,7 @@
     "publicIPAddressName": "[parameters('VmName')]",
     "serverDomainName": "[concat(parameters('VmName'), 'gen', parameters('Generation'))]",
     "nicName": "[parameters('VmName')]",
-    "imagePublisher": "[parameters('ImagePublisher')]",
+    "imagePublisher": "[parameters('VmImagePublisher')]",
     "imageOffer": "[parameters('ImageOffer')]"
   },
   "resources": [
