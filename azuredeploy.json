@@ -93,7 +93,7 @@
         "description": "The command to execute by the CustomScriptExtension."
       }
     },
-    "modulesUrl": {
+    "DscExtensionModulesUrl": {
       "type": "string",
       "defaultValue": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip",
       "metadata": {
@@ -349,7 +349,7 @@
           }
         },
         "settings": {
-          "ModulesUrl": "[parameters('modulesUrl')]",
+          "ModulesUrl": "[parameters('DscExtensionModulesUrl')]",
           "SasToken": "",
           "ConfigurationFunction": "[parameters('DscExtensionConfigurationFunction')]",
           "Properties": [
