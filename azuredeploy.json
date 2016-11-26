@@ -195,9 +195,7 @@
     "publicIPAddressType": "Dynamic",
     "publicIPAddressName": "[parameters('VmName')]",
     "serverDomainName": "[concat(parameters('VmName'), 'gen', parameters('Generation'))]",
-    "nicName": "[parameters('VmName')]",
-    "imagePublisher": "[parameters('VmImagePublisher')]",
-    "imageOffer": "[parameters('VmImageOffer')]"
+    "nicName": "[parameters('VmName')]"
   },
   "resources": [
     {
@@ -283,13 +281,13 @@
         },
         "osProfile": {
           "computerName": "[parameters('VmName')]",
-          "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminUsername": "[parameters('VmAdminUsername')]",
+          "adminPassword": "[parameters('VmAdminPassword')]"
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "[variables('imagePublisher')]",
-            "offer": "[variables('imageOffer')]",
+            "publisher": "[parameters('VmImagePublisher')]",
+            "offer": "[parameters('VmImageOffer')]",
             "sku": "[parameters('VmImageSKU')]",
             "version": "latest"
           },
