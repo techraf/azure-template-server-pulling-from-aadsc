@@ -6,13 +6,13 @@
       "value": "{{ generation_number }}"
     },
     "StorageAccountName": {
-      "value": "{{ server_storage_account }}"
+      "value": "{{ vm_disks_storage_account }}"
     },
     "VirtualNetworkName": {
       "value": "{{ vm_network_name }}"
     },
     "vmName": {
-      "value": "{{ server_name }}"
+      "value": "{{ vm_computer_name }}"
     },
     "vmSize": {
       "value": "{{ vm_size }}"
@@ -27,10 +27,10 @@
       "value": "{{ vm_image_sku }}"
     },
     "adminUsername": {
-      "value": "{{ admin_username }}"
+      "value": "{{ vm_admin_username }}"
     },
     "adminPassword": {
-      "value": "{{ admin_password }}"
+      "value": "{{ vm_admin_password }}"
     },
     "CustomScriptExtensionFileUris": {
       "value": "https://raw.githubusercontent.com/techraf/azure-template-server-pulling-from-aadsc/master/CustomScript.ps1"
@@ -45,13 +45,13 @@
       "value": "UpdateLCMforAAPull.ps1\\ConfigureLCMforAAPull"
     },
     "DscExtensionAzureAutomationAccountRegistrationKey": {
-      "value": "{{ azure_automation_registration_key }}"
+      "value": "{{ dsc_extension_azure_automation_registration_key }}"
     },
     "DscExtensionAzureAutomationAccountRegistrationUrl": {
-      "value": "{{ azure_automation_registration_url }}"
+      "value": "{{ dsc_extension_azure_automation_registration_url }}"
     },
     "DscExtensionNodeConfigurationName": {
-      "value": "{{ node_configuration_name }}"
+      "value": "{{ dsc_extension_node_configuration_name }}"
     },
     "DscExtensionConfigurationMode": {
       "value": "ApplyAndMonitor"
@@ -72,7 +72,7 @@
       "value": false
     },
     "DscExtensionTimestamp": {
-      "value": "{{ timestamp }}"
+      "value": "{{ dsc_extension_timestamp }}"
     }
   }
 }
