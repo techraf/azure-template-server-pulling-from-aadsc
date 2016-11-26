@@ -317,7 +317,7 @@
           "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File CustomScript.ps1"
         }
       }
-    }
+    },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('vmName'),'/Microsoft.Powershell.DSC')]",
