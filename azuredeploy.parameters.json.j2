@@ -41,37 +41,37 @@
     "modulesUrl": {
       "value": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip"
     },
-    "configurationFunction": {
+    "DscExtensionConfigurationFunction": {
       "value": "UpdateLCMforAAPull.ps1\\ConfigureLCMforAAPull"
     },
-    "registrationKey": {
+    "DscExtensionAzureAutomationAccountRegistrationKey": {
       "value": "{{ azure_automation_registration_key }}"
     },
-    "registrationUrl": {
+    "DscExtensionAzureAutomationAccountRegistrationUrl": {
       "value": "{{ azure_automation_registration_url }}"
     },
-    "nodeConfigurationName": {
+    "DscExtensionNodeConfigurationName": {
       "value": "{{ node_configuration_name }}"
     },
-    "configurationMode": {
+    "DscExtensionConfigurationMode": {
       "value": "ApplyAndMonitor"
     },
-    "configurationModeFrequencyMins": {
+    "DscExtensionConfigurationModeFrequencyMins": {
       "value": 15
     },
-    "refreshFrequencyMins": {
+    "DscExtensionRefreshFrequencyMins": {
       "value": 30
     },
-    "rebootNodeIfNeeded": {
+    "DscExtensionRebootNodeIfNeeded": {
       "value": true
     },
-    "actionAfterReboot": {
+    "DscExtensionActionAfterReboot": {
       "value": "ContinueConfiguration"
     },
-    "allowModuleOverwrite": {
+    "DscExtensionAllowModuleOverwrite": {
       "value": false
     },
-    "timestamp": {
+    "DscExtensionTimestamp": {
       "value": "{{ timestamp }}"
     }
   }
