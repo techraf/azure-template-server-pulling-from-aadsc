@@ -84,13 +84,13 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "The uri list of files. Split by a space."
+        "description": "The uri list of files to be downloaded for CustomScriptExtension. Split by a space."
       }
     },
     "CustomScriptExtensionCommandToExecute": {
       "type": "string",
       "metadata": {
-        "description": "The command to execute."
+        "description": "The command to execute by the CustomScriptExtension."
       }
     },
     "modulesUrl": {
