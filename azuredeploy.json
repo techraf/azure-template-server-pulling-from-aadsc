@@ -43,14 +43,12 @@
     },
     "ImagePublisher": {
       "type": "string",
-      "value": "{{ vm_image_publisher }}",
       "metadata": {
         "description": "Publisher of the VM image"
       }
     },
     "ImageOffer": {
       "type": "string",
-      "value": "{{ vm_image_offer }}",
       "metadata": {
         "description": "Offer of the VM image"
       }
