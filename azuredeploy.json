@@ -80,14 +80,14 @@
         "description": "Admin password"
       }
     },
-    "fileUris": {
+    "CustomScriptExtensionFileUris": {
       "type": "string",
       "defaultValue": "",
       "metadata": {
         "description": "The uri list of files. Split by a space."
       }
     },
-    "commandToExecute": {
+    "CustomScriptExtensionCommandToExecute": {
       "type": "string",
       "metadata": {
         "description": "The command to execute."
@@ -324,8 +324,8 @@
         "type": "CustomScriptExtension",
         "typeHandlerVersion": "1.7",
         "settings": {
-          "fileUris": "[split(parameters('fileUris'), ' ')]",
-          "commandToExecute": "[parameters('commandToExecute')]"
+          "fileUris": "[split(parameters('CustomScriptExtensionFileUris'), ' ')]",
+          "commandToExecute": "[parameters('CustomScriptExtensionCommandToExecute')]"
         }
       }
     },
