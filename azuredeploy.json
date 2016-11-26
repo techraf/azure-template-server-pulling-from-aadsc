@@ -183,8 +183,8 @@
     "publicIPAddressName": "[parameters('vmName')]",
     "serverDomainName": "[concat(parameters('vmName'), 'gen', parameters('Generation'))]",
     "nicName": "[parameters('vmName')]",
-    "imagePublisher": "MicrosoftWindowsServer",
-    "imageOffer": "WindowsServer"
+    "imagePublisher": "[parameters('ImagePublisher')]",
+    "imageOffer": "[parameters('ImageOffer')]"
   },
   "resources": [
     {
