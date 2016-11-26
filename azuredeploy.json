@@ -41,7 +41,21 @@
         "description": "Size of the VM"
       }
     },
-    "imageSKU": {
+    "ImagePublisher": {
+      "type": "string",
+      "value": "{{ vm_image_publisher }}",
+      "metadata": {
+        "description": "Publisher of the VM image"
+      }
+    },
+    "ImageOffer": {
+      "type": "string",
+      "value": "{{ vm_image_offer }}",
+      "metadata": {
+        "description": "Offer of the VM image"
+      }
+    },
+    "ImageSKU": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
       "allowedValues": [
@@ -264,7 +278,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('imageSKU')]",
+            "sku": "[parameters('ImageSKU')]",
             "version": "latest"
           },
           "osDisk": {
