@@ -61,7 +61,8 @@
         "2012-Datacenter",
         "2012-R2-Datacenter",
         "2016-Nano-Server",
-        "2016-Datacenter"
+        "2016-Datacenter",
+        "Windows-10-N-x64"
       ],
       "metadata": {
         "description": "Image SKU"
